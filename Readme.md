@@ -31,3 +31,9 @@ Primitive and Non-Primitive data types
 MSIL (Microsoft Intermediate Language) and CIL (Common Intermediate Language)
 
 .NET architecture
+
+learn about heap and stack memory
+
+static memory 
+
+done 16 programs in c#
