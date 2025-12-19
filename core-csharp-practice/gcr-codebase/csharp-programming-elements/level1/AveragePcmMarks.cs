@@ -1,6 +1,6 @@
 using System;
 
-class Program
+class AveragePcmMarks
 {
     static void Main()
     {
