@@ -1,8 +1,8 @@
 using System;
 
-class Program
+class HeightConversion
 {
-    static void HeightConversion()
+    static void Main()
     {
         Console.Write("Enter height in cm: ");
         double cm = Convert.ToDouble(Console.ReadLine());
