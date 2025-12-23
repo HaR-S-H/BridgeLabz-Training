@@ -1,0 +1,29 @@
+using System;
+
+class TableSixToNine
+{
+    static void Main()
+    {
+        int number;
+        int[] result = new int[4];
+
+        Console.WriteLine("Enter a number:");
+        number = int.Parse(Console.ReadLine());
+
+        int index = 0;
+
+        for (int i = 6; i <= 9; i++)
+        {
+            result[index] = number * i;
+            index++;
+        }
+
+        index = 0;
+
+        for (int i = 6; i <= 9; i++)
+        {
+            Console.WriteLine(number + " * " + i + " = " + result[index]);
+            index++;
+        }
+    }
+}
