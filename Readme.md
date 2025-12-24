@@ -1,4 +1,4 @@
-Hello Capgemini 👋
+Hello 
 
 From: Harsh
 
