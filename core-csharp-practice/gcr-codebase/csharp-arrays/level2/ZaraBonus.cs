@@ -3,12 +3,12 @@ using System;
 class ZaraBonus
 {
     static void Main()
-    {
+    {   //  declare arrays for salary, years of service, bonus amount, and new salary
         double[] salary = new double[10];
         double[] yearsOfService = new double[10];
         double[] bonusAmount = new double[10];
         double[] newSalary = new double[10];
-
+        
         double totalBonus = 0.0;
         double totalOldSalary = 0.0;
         double totalNewSalary = 0.0;

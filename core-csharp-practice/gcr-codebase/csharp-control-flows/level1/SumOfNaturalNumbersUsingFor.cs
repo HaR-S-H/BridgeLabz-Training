@@ -3,8 +3,8 @@ using System;
 class SumOfNaturalNumbersUsingFor
 {
     static void Main()
-    {
-        Console.Write("Enter a number: ");
+    {   // take a number as input from user
+        Console.Write("enter a number");
         int number = int.Parse(Console.ReadLine());
 
         if (number < 0)
@@ -14,15 +14,15 @@ class SumOfNaturalNumbersUsingFor
         }
 
         int sumUsingFor = 0;
-
+        // calculate sum using for loop
         for (int i = 1; i <= number; i++)
         {
             sumUsingFor += i;
         }
 
         int sumUsingFormula = number * (number + 1) / 2;
-
-        Console.WriteLine($"Sum using for loop: {sumUsingFor}");
-        Console.WriteLine($"Sum using formula: {sumUsingFormula}");
+        // display the results
+        Console.WriteLine(sumUsingFor);
+        Console.WriteLine(sumUsingFormula);
     }
 }

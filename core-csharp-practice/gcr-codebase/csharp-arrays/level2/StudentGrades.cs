@@ -3,8 +3,10 @@ using System;
 class StudentGrades
 {
     static void Main()
-    {
-        Console.WriteLine("Enter number of students:");
+    {   // take number of students as input
+        Console.WriteLine("enter number of students");
+
+
         int number = int.Parse(Console.ReadLine());
 
         int[] physics = new int[number];
@@ -35,7 +37,7 @@ class StudentGrades
             else
                 grade[i] = "Fail";
         }
-
+    //  display percentage and grade
         for (int i = 0; i < number; i++)
         {
             Console.WriteLine("Percentage: " + percentage[i] +

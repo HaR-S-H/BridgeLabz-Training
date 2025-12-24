@@ -2,14 +2,14 @@ using System;
 class GradeCalculation
 {
     static void Main()
-    {
-        Console.Write("Enter Physics marks: ");
+    {// take marks for Physics, Chemistry, and Maths as input from user
+        Console.Write("rnter Physics marks");
         int p = int.Parse(Console.ReadLine());
         Console.Write("Enter Chemistry marks: ");
         int c = int.Parse(Console.ReadLine());
         Console.Write("Enter Maths marks: ");
         int m = int.Parse(Console.ReadLine());
-
+        // calculate average and determine grade and remarks
         double avg = (p + c + m) / 3.0;
         string grd = "";
         string remark = "";

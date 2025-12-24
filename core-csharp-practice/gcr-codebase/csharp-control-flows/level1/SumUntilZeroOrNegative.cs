@@ -8,7 +8,7 @@ class Program
 
         while (true)
         {
-            Console.Write("Enter a number: ");
+            Console.Write("enter a number");
             double inputNumber = double.Parse(Console.ReadLine());
 
             if (inputNumber <= 0)
@@ -19,6 +19,6 @@ class Program
             totalSum += inputNumber;
         }
 
-        Console.WriteLine($"The total sum is {totalSum}");
+        Console.WriteLine($"the total sum is {totalSum}");
     }
 }

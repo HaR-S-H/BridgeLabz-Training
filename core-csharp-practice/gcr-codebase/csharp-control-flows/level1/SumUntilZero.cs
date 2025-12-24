@@ -3,17 +3,17 @@ using System;
 class SumUntilZero
 {
     static void Main()
-    {
+    {   // initialize total sum variable
         double total = 0;
         double number;
 
         do
         {
-            Console.Write("Enter number: ");
+            Console.Write("enter number");
             number = double.Parse(Console.ReadLine());
             total += number;
         } while (number != 0);
 
-        Console.WriteLine($"Total sum is {total}");
+        Console.WriteLine($"total sum is {total}");
     }
 }

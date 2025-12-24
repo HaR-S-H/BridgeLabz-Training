@@ -3,18 +3,20 @@ using System;
 class SimpleInterest
 {
     static void Main()
-    {
-        Console.Write("Enter Principal: ");
+    {// take Principal, Rate of Interest and Time as input from user
+        Console.Write("enter prencipal");
+
         double principal = Convert.ToDouble(Console.ReadLine());
 
-        Console.Write("Enter Rate of Interest: ");
+        Console.Write("enter Rete of Interest");
         double rate = Convert.ToDouble(Console.ReadLine());
+        //Time
+        Console.Write("enter Time");
 
-        Console.Write("Enter Time: ");
         double time = Convert.ToDouble(Console.ReadLine());
-
-        double simpleInterest = (principal * rate * time) / 100;
-
-        Console.WriteLine($"The Simple Interest is {simpleInterest} for Principal {principal}, Rate of Interest {rate} and Time {time}");
+        // calculate Simple Interest
+        double sipleInterest = (principal * rate * time) / 100;
+    // print the result
+        Console.WriteLine($"The Simple Interest is {sipleInterest} for Principal {principal}, Rate of Interest {rate} and Time {time}");
     }
 }

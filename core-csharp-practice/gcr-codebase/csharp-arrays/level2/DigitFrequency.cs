@@ -3,8 +3,9 @@ using System;
 class DigitFrequency
 {
     static void Main()
-    {
-        Console.WriteLine("Enter a number:");
+    {   // take number as input from user
+        Console.WriteLine("enter a number");
+
         int number = int.Parse(Console.ReadLine());
 
         int temp = number;
@@ -15,8 +16,10 @@ class DigitFrequency
             count++;
             temp = temp / 10;
         }
-
+        // store digits in an array
         int[] digits = new int[count];
+
+
         temp = number;
 
         for (int i = 0; i < count; i++)
@@ -24,14 +27,18 @@ class DigitFrequency
             digits[i] = temp % 10;
             temp = temp / 10;
         }
-
+// calculate frequency of each digit
         int[] frequency = new int[10];
+
+
 
         for (int i = 0; i < count; i++)
         {
             frequency[digits[i]]++;
         }
 
+
+        // display frequency of each digit
         for (int i = 0; i < 10; i++)
         {
             if (frequency[i] > 0)

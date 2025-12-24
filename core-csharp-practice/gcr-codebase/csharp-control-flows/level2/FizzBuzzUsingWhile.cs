@@ -2,10 +2,11 @@ using System;
 class FizzBuzzUsingWhile
 {
     static void Main()
-    {
-        Console.Write("Enter number: ");
+    {   // take a positive number as input from user
+        Console.Write("enter number");
         int n = int.Parse(Console.ReadLine());
         int i = 1;
+            // FizzBuzz logic using while loop
         while (i <= n)
         {
             if (i % 3 == 0 && i % 5 == 0)

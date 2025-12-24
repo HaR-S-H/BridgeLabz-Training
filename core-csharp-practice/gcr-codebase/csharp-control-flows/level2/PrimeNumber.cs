@@ -2,8 +2,8 @@ using System;
 class PrimeNumber
 {
     static void Main()
-    {
-        Console.Write("Enter a number: ");
+    {   // take a number as input from user
+        Console.Write("enter a number");
         int n = int.Parse(Console.ReadLine());
         bool isPrime = true;
 

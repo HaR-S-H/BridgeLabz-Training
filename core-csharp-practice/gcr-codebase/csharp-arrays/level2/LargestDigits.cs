@@ -3,14 +3,15 @@ using System;
 class LargestDigits
 {
     static void Main()
-    {
-        Console.WriteLine("Enter a number:");
-        int number = int.Parse(Console.ReadLine());
+    {// take number as input
+        Console.WriteLine("enter a number");
 
+        int number = int.Parse(Console.ReadLine());
+// extract digits and store in an array
         int maxDigit = 10;
         int[] digits = new int[maxDigit];
         int index = 0;
-
+    //  extract digits and store in an array
         while (number != 0)
         {
             if (index == maxDigit)
@@ -38,7 +39,7 @@ class LargestDigits
                 secondLargest = digits[i];
             }
         }
-
+    // display largest and second largest digits
         Console.WriteLine("Largest Digit = " + largest);
         Console.WriteLine("Second Largest Digit = " + secondLargest);
     }

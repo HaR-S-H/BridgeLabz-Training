@@ -3,9 +3,9 @@ class PowerCalculation
 {
     static void Main()
     {
-        double baseNum = 2.0;
-        double exponent = 3.0;
-        double result = Math.Pow(baseNum, exponent);
+        double basen = 2.0;
+        double ex = 3.0;
+        double result = Math.Pow(basen, ex);
         Console.Write(result);
     }
 }

@@ -3,7 +3,7 @@ using System;
 class SpringSeason
 {
     static void Main(string[] args)
-    {
+    {   // read month and day from command line arguments
         int month = int.Parse(args[0]);
         int day = int.Parse(args[1]);
 
@@ -11,8 +11,8 @@ class SpringSeason
             (month == 4) ||
             (month == 5) ||
             (month == 6 && day <= 20))
-            Console.WriteLine("Its a Spring Season");
+            Console.WriteLine("its a spring season");
         else
-            Console.WriteLine("Not a Spring Season");
+            Console.WriteLine("not a spring season");
     }
 }

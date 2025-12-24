@@ -3,29 +3,39 @@ using System;
 class TripCalculation
 {
     static void Main()
-    {
-        Console.Write("Enter Name: ");
+    {   // take trip details as input from user
+        Console.Write("enter name");
+
         string name = Console.ReadLine();
+        //From City
+        Console.Write("from city");
 
-        Console.Write("From City: ");
+
         string fromCity = Console.ReadLine();
+        //Via City
+        Console.Write("via city");
 
-        Console.Write("Via City: ");
         string viaCity = Console.ReadLine();
 
         Console.Write("To City: ");
         string toCity = Console.ReadLine();
 
-        Console.Write("Distance from start to via (miles): ");
+        Console.Write("Distance from start to via");
+
+
         double fromToVia = Convert.ToDouble(Console.ReadLine());
 
-        Console.Write("Distance from via to final city (miles): ");
+        Console.Write("Distance from via to final city");
+
+
         double viaToFinalCity = Convert.ToDouble(Console.ReadLine());
 
         Console.Write("Time taken (hours): ");
         double timeTaken = Convert.ToDouble(Console.ReadLine());
-
+        // calculate total distance and speed
         double totalDistance = fromToVia + viaToFinalCity;
+        
+        
         double speed = totalDistance / timeTaken;
 
         Console.WriteLine($"The results of the trip are Distance: {totalDistance}, Time: {timeTaken}, Speed: {speed}");

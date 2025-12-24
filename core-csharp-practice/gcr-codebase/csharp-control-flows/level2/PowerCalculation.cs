@@ -2,10 +2,10 @@ using System;
 class PowerCalculation
 {
     static void Main()
-    {
-        Console.Write("Enter number: ");
+    {   //  take base and exponent as input from user
+        Console.Write("enter number");
         int num = int.Parse(Console.ReadLine());
-        Console.Write("Enter power: ");
+        Console.Write("enter power");
         int pow = int.Parse(Console.ReadLine());
 
         int res = 1;

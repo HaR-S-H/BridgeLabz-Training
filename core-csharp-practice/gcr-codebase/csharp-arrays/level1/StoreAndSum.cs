@@ -3,14 +3,18 @@ using System;
 class StoreAndSum
 {
     static void Main()
-    {
+    {   // declare an array to hold up to 10 numbers
         double[] numbers = new double[10];
+
+        // initialize total sum and index variables
         double total = 0.0;
+
         int index = 0;
 
         while (true)
         {
-            Console.WriteLine("Enter a number:");
+            Console.WriteLine("enter a number");
+            
             double value = double.Parse(Console.ReadLine());
 
             if (value <= 0 || index == 10)

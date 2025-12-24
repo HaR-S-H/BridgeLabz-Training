@@ -3,20 +3,26 @@ using System;
 class CalculatorUsingSwitch
 {
     static void Main()
-    {
+    {   // declare variables
         double first;
-        double second;
-        string op;
 
-        Console.WriteLine("Enter first number:");
+        double second;
+
+        string op;
+        //  take input from user
+        Console.WriteLine("enter first number");
+
         first = double.Parse(Console.ReadLine());
 
-        Console.WriteLine("Enter second number:");
+        Console.WriteLine("enter second number");
+
         second = double.Parse(Console.ReadLine());
-
+        //  take operator as input from user
         Console.WriteLine("Enter operator (+, -, *, /):");
-        op = Console.ReadLine();
 
+
+        op = Console.ReadLine();
+        // perform calculation based on operator
         switch (op)
         {
             case "+":

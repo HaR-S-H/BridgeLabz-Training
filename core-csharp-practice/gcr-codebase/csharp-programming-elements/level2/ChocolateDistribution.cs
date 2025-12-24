@@ -3,16 +3,18 @@ using System;
 class ChocolateDistribution
 {
     static void Main()
-    {
-        Console.Write("Enter number of chocolates: ");
+    {   //take number of chocolates and children as input from user
+        Console.Write("enter number of chocolates");
+
         int chocolates = Convert.ToInt32(Console.ReadLine());
-
-        Console.Write("Enter number of children: ");
+        
+        Console.Write("enter number of children");
         int children = Convert.ToInt32(Console.ReadLine());
-
+        //calculate chocolates per child and remaining chocolates
         int perChild = chocolates / children;
-        int remaining = chocolates % children;
 
+        int remaining = chocolates % children;
+        //print the result
         Console.WriteLine($"The number of chocolates each child gets is {perChild} and the number of remaining chocolates is {remaining}");
     }
 }

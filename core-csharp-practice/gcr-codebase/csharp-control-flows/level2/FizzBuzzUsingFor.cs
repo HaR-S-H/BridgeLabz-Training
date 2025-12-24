@@ -2,10 +2,10 @@ using System;
 class FizzBuzzUsingFor
 {
     static void Main()
-    {
-        Console.Write("Enter a positive number: ");
+    {   // take a positive number as input from user
+        Console.Write("enter a positive number");
         int num = int.Parse(Console.ReadLine());
-
+        // FizzBuzz logic using for loop
         for (int i = 1; i <= num; i++)
         {
             if (i % 3 == 0 && i % 5 == 0)

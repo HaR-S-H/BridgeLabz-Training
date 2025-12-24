@@ -3,8 +3,8 @@ using System;
 class FizzBuzz
 {
     static void Main()
-    {
-        Console.WriteLine("Enter a number:");
+    {   // take a number as input from user
+        Console.WriteLine("enter a number");
         int number = int.Parse(Console.ReadLine());
 
         if (number <= 0)
@@ -12,7 +12,7 @@ class FizzBuzz
             Console.WriteLine("Invalid input");
             return;
         }
-
+            // declare an array to store FizzBuzz results
         string[] result = new string[number + 1];
 
         for (int i = 1; i <= number; i++)

@@ -3,14 +3,15 @@ using System;
 class LargestDigitNotFixedSize
 {
     static void Main()
-    {
-        Console.WriteLine("Enter a number:");
+    {   // take number as input
+        Console.WriteLine("enter a number");
+
         int number = int.Parse(Console.ReadLine());
 
         int maxDigit = 10;
         int[] digits = new int[maxDigit];
         int index = 0;
-
+    //  store digits in the array
         while (number != 0)
         {
             if (index == maxDigit)
@@ -46,7 +47,7 @@ class LargestDigitNotFixedSize
                 secondLargest = digits[i];
             }
         }
-
+    // display largest and second largest digits
         Console.WriteLine("Largest Digit = " + largest);
         Console.WriteLine("Second Largest Digit = " + secondLargest);
     }

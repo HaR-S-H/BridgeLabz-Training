@@ -3,12 +3,12 @@ using System;
 class NumberCheck
 {
     static void Main()
-    {
+    {   // declare an array to hold 5 numbers
         int[] numbers = new int[5];
 
         for (int i = 0; i < numbers.Length; i++)
         {
-            Console.WriteLine("Enter number " + (i + 1));
+            Console.WriteLine("enter number" + (i + 1));
             numbers[i] = int.Parse(Console.ReadLine());
         }
 

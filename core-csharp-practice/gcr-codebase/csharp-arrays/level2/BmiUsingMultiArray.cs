@@ -3,11 +3,15 @@ using System;
 class BmiUsingMultiArray
 {
     static void Main()
-    {
-        Console.WriteLine("Enter number of persons:");
-        int number = int.Parse(Console.ReadLine());
+    {   // take number of persons as input
+        Console.WriteLine("enter number of persons");
 
+
+        int number = int.Parse(Console.ReadLine());
+        // declare multi-dimensional array to store weight, height and bmi
         double[][] personData = new double[number][];
+
+        
         string[] weightStatus = new string[number];
 
         for (int i = 0; i < number; i++)

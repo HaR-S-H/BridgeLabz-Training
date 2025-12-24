@@ -3,7 +3,7 @@ class LeapYear
 {
     static void Main()
     {
-        Console.Write("Enter a year: ");
+        Console.Write("enter a year");
         int yr = int.Parse(Console.ReadLine());
         if (yr >= 1582)
         {

@@ -3,13 +3,13 @@ using System;
 class EmployeeBonusCalculation
 {
     static void Main()
-    {
-        Console.Write("Enter employee salary: ");
+    {   // take salary and years of service as input from user
+        Console.Write("enter salary");
         double salary = double.Parse(Console.ReadLine());
-
-        Console.Write("Enter years of service: ");
+        // read years of service
+        Console.Write("enter years of service");
         int yearsOfService = int.Parse(Console.ReadLine());
-
+        // check if years of service is greater than 5
         if (yearsOfService > 5)
         {
             double bonus = salary * 0.05;

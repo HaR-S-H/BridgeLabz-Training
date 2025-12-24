@@ -3,13 +3,15 @@ using System;
 class HarshadNumber
 {
     static void Main()
-    {
+    {   // declare variables
         int number;
         int temp;
         int remainder;
         int sum = 0;
 
-        Console.WriteLine("Enter a number:");
+        Console.WriteLine("enter a number");
+
+        
         number = int.Parse(Console.ReadLine());
 
         temp = number;

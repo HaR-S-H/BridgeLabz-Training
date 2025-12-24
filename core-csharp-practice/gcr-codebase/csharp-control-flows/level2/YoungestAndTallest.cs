@@ -2,19 +2,19 @@ using System;
 class YoungestAndTallest
 {
     static void Main()
-    {
-        Console.Write("Enter Amar age: ");
+    {   // take ages and heights of Amar, Akbar and Anthony as input from user
+        Console.Write("enter Amar age");
         int aAge = int.Parse(Console.ReadLine());
-        Console.Write("Enter Akbar age: ");
+        Console.Write("enter Akbar age");
         int kAge = int.Parse(Console.ReadLine());
-        Console.Write("Enter Anthony age: ");
+        Console.Write("enter Anthony age");
         int tAge = int.Parse(Console.ReadLine());
 
-        Console.Write("Enter Amar height: ");
+        Console.Write("enter Amar height");
         double aHt = double.Parse(Console.ReadLine());
-        Console.Write("Enter Akbar height: ");
+        Console.Write("enter Akbar height");
         double kHt = double.Parse(Console.ReadLine());
-        Console.Write("Enter Anthony height: ");
+        Console.Write("enter Anthony height");
         double tHt = double.Parse(Console.ReadLine());
 
         int minAge = aAge;

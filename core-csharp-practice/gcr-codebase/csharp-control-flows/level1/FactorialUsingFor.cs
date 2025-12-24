@@ -3,10 +3,10 @@ using System;
 class FactorialUsingFor
 {
     static void Main()
-    {
-        Console.Write("Enter a number: ");
+    {   // take a number as input from user
+        Console.Write("enter a number");
         int number = int.Parse(Console.ReadLine());
-
+        // check if the number is negative
         if (number < 0)
         {
             Console.WriteLine("Factorial is not defined for negative numbers.");

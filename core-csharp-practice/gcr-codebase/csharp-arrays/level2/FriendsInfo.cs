@@ -3,11 +3,14 @@ using System;
 class FriendsInfo
 {
     static void Main()
-    {
+    {           // declare arrays for names, ages, and heights
+
+
         string[] names = { "Amar", "Akbar", "Anthony" };
+
         int[] ages = new int[3];
         double[] heights = new double[3];
-
+    //  take age and height as input
         for (int i = 0; i < 3; i++)
         {
             Console.WriteLine("Enter age of " + names[i]);
@@ -18,8 +21,10 @@ class FriendsInfo
         }
 
         int youngestIndex = 0;
-        int tallestIndex = 0;
 
+        
+        int tallestIndex = 0;
+    // find youngest and tallest friend
         for (int i = 1; i < 3; i++)
         {
             if (ages[i] < ages[youngestIndex])

@@ -3,10 +3,11 @@ using System;
 class SumOfNuturalNumbers
 {
     static void Main()
-    {
-        Console.Write("Enter number: ");
-        int n = int.Parse(Console.ReadLine());
+    {   // take a number as input from user
+        Console.Write("enter number");
 
+        int n = int.Parse(Console.ReadLine());
+    // calculate the sum of natural numbers up to n
         if (n >= 0)
         {
             int sum = n * (n + 1) / 2;

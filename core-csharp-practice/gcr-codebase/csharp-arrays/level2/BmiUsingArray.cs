@@ -3,21 +3,24 @@ using System;
 class BmiUsingArray
 {
     static void Main()
-    {
-        Console.WriteLine("Enter number of persons:");
+    {   // take number of persons as input
+        Console.WriteLine("enter number of persons");
+        // read the number
         int number = int.Parse(Console.ReadLine());
-
+        //  declare arrays to store weight, height, bmi and status
         double[] weight = new double[number];
         double[] height = new double[number];
         double[] bmi = new double[number];
         string[] status = new string[number];
-
+    // take weight and height as input and calculate bmi and status
         for (int i = 0; i < number; i++)
-        {
-            Console.WriteLine("Enter weight:");
-            weight[i] = double.Parse(Console.ReadLine());
+        {   // read weight
+            Console.WriteLine("enter weight");
 
-            Console.WriteLine("Enter height:");
+            weight[i] = double.Parse(Console.ReadLine());
+            // read height
+            Console.WriteLine("enter height");
+            
             height[i] = double.Parse(Console.ReadLine());
 
             bmi[i] = weight[i] / (height[i] * height[i]);
