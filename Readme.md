@@ -37,3 +37,19 @@ learn about heap and stack memory
 static memory 
 
 done 16 programs in c#
+
+📅 Learning Log — 22 December
+Control flows
+if else
+switch
+while 
+for 
+do while 
+done all three levels of control flows
+📅 Learning Log — 23 December
+arrays
+1 d array
+2 d array
+reviews started
+done first level of array
+leetcode started
