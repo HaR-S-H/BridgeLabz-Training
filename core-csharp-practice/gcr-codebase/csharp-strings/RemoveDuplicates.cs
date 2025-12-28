@@ -2,7 +2,7 @@ using System;
 
 class RemoveDuplicates
 {
-    static string RemoveDuplicates(string text)
+    static string DoRemoveDuplicates(string text)
     {
         string result = "";
 
@@ -20,6 +20,6 @@ class RemoveDuplicates
         Console.Write("Enter string: ");
         string s = Console.ReadLine();
 
-        Console.WriteLine("After removing duplicates: " + RemoveDuplicates(s));
+        Console.WriteLine("After removing duplicates: " + DoRemoveDuplicates(s));
     }
 }

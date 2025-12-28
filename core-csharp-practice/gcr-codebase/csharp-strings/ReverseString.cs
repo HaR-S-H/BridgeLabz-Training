@@ -2,7 +2,7 @@ using System;
 
 class ReverseString
 {
-    static string ReverseString(string text)
+    static string DoReverseString(string text)
     {
         string rev = "";
 
@@ -19,7 +19,7 @@ class ReverseString
         Console.Write("Enter string: ");
         string s = Console.ReadLine();
 
-        string result = ReverseString(s);
+        string result = DoReverseString(s);
         Console.WriteLine("Reversed String: " + result);
     }
 }
