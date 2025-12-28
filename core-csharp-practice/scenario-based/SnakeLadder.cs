@@ -11,8 +11,8 @@ class SnakeLadder
     // }
     public static int ApplySnakeOrLadder(int value)
     {
-        int[][] snakes = { new int[] { 17, 7 }, new int[] { 54, 34 }, new int[] { 62, 20 }, new int[] { 87, 11 }, new int[] { 95, 39 }, new int[] { 98, 5 } };
-        int[][] ladder = { new int[] { 7, 90 }, new int[] { 34, 50 }, new int[] { 19, 30 }, new int[] { 60, 85 }, new int[] { 81, 95 } };
+        int[][] snakes = [[17, 7], [54, 34], [62, 20], [87, 11], [95, 39], [98, 5]];
+        int[][] ladder = [ [ 7, 90 ], [34, 50], [19, 30], [60, 85], [81, 95]];
         for (int i = 0; i < snakes.Length; i++)
         {
             if (value == snakes[i][0])
