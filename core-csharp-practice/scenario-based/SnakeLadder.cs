@@ -6,13 +6,11 @@ class SnakeLadder
     {
         return new Random().Next(1, 7);
     }
-    // public static void MovePlayer(int old,int value) { 
-    //     return 
-    // }
+
     public static int ApplySnakeOrLadder(int value)
-    {
-        int[][] snakes = [[17, 7], [54, 34], [62, 20], [87, 11], [95, 39], [98, 5]];
-        int[][] ladder = [ [ 7, 90 ], [34, 50], [19, 30], [60, 85], [81, 95]];
+    {   //snakes and ladder array
+        int[][] snakes = { new { 17, 7 }, new { 54, 34 }, new { 62, 20 }, new { 87, 11 }, new { 95, 39 }, new { 98, 5 } };
+        int[][] ladder = { new { 7, 90 }, new { 34, 50 }, new { 19, 30 }, new { 60, 85 }, new { 81, 95 } };
         for (int i = 0; i < snakes.Length; i++)
         {
             if (value == snakes[i][0])
@@ -40,7 +38,7 @@ class SnakeLadder
     static void Main()
     {
         Console.WriteLine("Welcome to Snake and Ladder Game");
-        Console.WriteLine("please enter number of players: ");
+        Console.WriteLine("Please enter number of players: ");
         int numPlayers = int.Parse(Console.ReadLine());
         if (numPlayers < 2 || numPlayers > 4)
         {
