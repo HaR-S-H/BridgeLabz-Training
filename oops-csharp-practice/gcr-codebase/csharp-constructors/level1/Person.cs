@@ -37,8 +37,8 @@ class Program
     static void Main()
     {   //object creation
         Person person1 = new(); //calling default constructor
-        Person person2 = new(person1);
-        person1.DisplayDetails();
+        Person person2 = new(person1);//calling copy constructor
+        person1.DisplayDetails();//calling display details methods
         person2.DisplayDetails();
     }
 }
