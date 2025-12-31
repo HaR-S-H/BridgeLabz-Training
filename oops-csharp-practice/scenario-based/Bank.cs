@@ -67,7 +67,7 @@ class BankManager //bank manager class
 
     public void BankManagerDetails() //method to show bank manager details
     {
-        
+
         Console.WriteLine("Bank Manager Details :- ");
         Console.WriteLine("Bank Manager Name :" + managerName);
         Console.WriteLine("Bank Manager Mobile Number :" + mobileNumber);
