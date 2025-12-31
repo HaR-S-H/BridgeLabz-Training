@@ -7,10 +7,11 @@ class TemperatureAnalyzer
         int hottestDay = 0;
         int coldestDay = 0;
 
+
         float hottestAvg = float.MinValue;
         float coldestAvg = float.MaxValue;
 
-        for (int day = 0; day < 7; day++)
+        for (int day = 0; day < 7; day++)   
         {
             float dailySum = 0;
 
