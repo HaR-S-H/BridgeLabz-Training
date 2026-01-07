@@ -12,6 +12,7 @@ namespace EmployeWage
         private readonly int _fullDayHour = 8;
         private double _dailyWage;
         private readonly int _partTimeHour = 8;
+        private readonly int _workingDays = 20;
         private Random random = new Random();
 
 
@@ -67,7 +68,7 @@ namespace EmployeWage
         {
             int totalWage = 0;
 
-            for (int day = 1; day <= WORKING_DAYS; day++)
+            for (int day = 1; day <= _workingDays; day++)
             {
                 int empType = random.Next(0, 3);
                 int hours = 0;
@@ -75,17 +76,17 @@ namespace EmployeWage
                 switch (empType)
                 {
                     case 1:
-                        hours = FULL_DAY_HOUR;
+                        hours = _fullDayHour;
                         break;
                     case 2:
-                        hours = PART_TIME_HOUR;
+                        hours = _partTimeHour;
                         break;
                     default:
                         hours = 0;
                         break;
                 }
 
-                totalWage += hours * WAGE_PER_HOUR;
+                totalWage += hours * _wagePerHour;
             }
 
             Console.WriteLine("Monthly Wage (20 Days): " + totalWage);
