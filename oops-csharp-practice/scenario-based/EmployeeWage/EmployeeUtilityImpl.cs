@@ -11,6 +11,7 @@ namespace EmployeWage
         private readonly int _wagePerHour = 20;
         private readonly int _fullDayHour = 8;
         private double _dailyWage;
+        private readonly int _partTimeHour = 8;
         private Random random = new Random();
 
 
@@ -34,6 +35,32 @@ namespace EmployeWage
             Console.WriteLine("Employee Daily Wage : " + _dailyWage);
         }
 
+        public void AddPartTimeEmployee()
+        {
+            int empType = random.Next(0, 3); // 0-Absent, 1-FullTime, 2-PartTime
+            int hours = 0;
+
+            switch (empType)
+            {
+                case 1:
+                    Console.WriteLine("Full Time Employee");
+                    hours = _fullDayHour;
+                    break;
+
+                case 2:
+                    Console.WriteLine("Part Time Employee");
+                    hours = _partTimeHour;
+                    break;
+
+                default:
+                    Console.WriteLine("Employee is Absent");
+                    hours = 0;
+                    break;
+            }
+
+            int wage = hours * _wagePerHour;
+            Console.WriteLine("Wage: " + wage);
+        }
 
     }
 }
