@@ -62,5 +62,34 @@ namespace EmployeWage
             Console.WriteLine("Wage: " + wage);
         }
 
+        // UC4 - Calculate Wages for a Month (20 Days)
+        public void CalculateMonthlyWage()
+        {
+            int totalWage = 0;
+
+            for (int day = 1; day <= WORKING_DAYS; day++)
+            {
+                int empType = random.Next(0, 3);
+                int hours = 0;
+
+                switch (empType)
+                {
+                    case 1:
+                        hours = FULL_DAY_HOUR;
+                        break;
+                    case 2:
+                        hours = PART_TIME_HOUR;
+                        break;
+                    default:
+                        hours = 0;
+                        break;
+                }
+
+                totalWage += hours * WAGE_PER_HOUR;
+            }
+
+            Console.WriteLine("Monthly Wage (20 Days): " + totalWage);
+        }
+
     }
 }
