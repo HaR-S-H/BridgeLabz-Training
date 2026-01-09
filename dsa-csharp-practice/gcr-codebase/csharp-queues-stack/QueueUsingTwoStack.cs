@@ -20,4 +20,12 @@ class QueueUsingStacks
 
         return s2.Pop();
     }
+    static void Main()
+    {
+        QueueUsingStacks q = new QueueUsingStacks();
+        q.Enqueue(1);
+        q.Enqueue(2);
+        q.Enqueue(3);
+        Console.WriteLine(q.Dequeue());
+    }
 }

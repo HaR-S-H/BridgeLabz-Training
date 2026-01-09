@@ -24,4 +24,18 @@ class SortStackRecursively
         InsertSorted(stack, value);
         stack.Push(temp);
     }
+    static void Main()
+    {
+        Stack<int> stack = new Stack<int>();
+        stack.Push(30);
+        stack.Push(10);
+        stack.Push(20);
+        stack.Push(5);
+        stack.Push(15);
+        SortStack(stack);
+        while (stack.Count > 0)
+        {
+            Console.WriteLine(stack.Pop());
+        }
+    }
 }

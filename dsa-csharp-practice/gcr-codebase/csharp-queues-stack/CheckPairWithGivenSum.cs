@@ -15,4 +15,11 @@ class PairWithSum
         }
         return false;
     }
+    static void Main()
+    {
+        int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        int target = 15;
+        Console.WriteLine(HasPair(arr, target));
+        
+    }
 }

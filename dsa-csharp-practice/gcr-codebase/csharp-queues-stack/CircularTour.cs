@@ -28,4 +28,10 @@ class CircularTour
 
         return (surplus + deficit >= 0) ? start : -1;
     }
+    static void Main()
+    {
+        PetrolPump[] pumps = { new PetrolPump(6, 4), new PetrolPump(3, 6), new PetrolPump(7, 3) };
+        Console.WriteLine(FindStart(pumps));
+        
+    }
 }

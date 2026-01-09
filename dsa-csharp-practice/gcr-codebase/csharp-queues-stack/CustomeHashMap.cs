@@ -46,4 +46,13 @@ class MyHashMap
             table[index].RemoveAll(p => p.Key == key);
         }
     }
+    static void Main()
+    {
+        MyHashMap map = new MyHashMap();
+        map.Put(1, 10);
+        map.Put(2, 20);
+        map.Put(3, 30);
+        Console.WriteLine(map.Get(1)); // Output: 10
+        Console.WriteLine(map.Get(2)); // Output: 20
+    }
 }

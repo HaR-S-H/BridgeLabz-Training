@@ -27,4 +27,10 @@ class ZeroSumSubarrays
             map[sum].Add(i);
         }
     }
+    static void Main()
+    {
+        int[] arr = { 1, 2, 3, -2, 5 };
+        FindSubarrays(arr);
+        
+    }
 }

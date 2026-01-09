@@ -20,4 +20,15 @@ class StockSpan
 
         return span;
     }
+    static void Main()
+    {
+        int[] prices = { 100, 80, 60, 70, 60, 75, 85 };
+        int[] span = CalculateSpan(prices);
+
+        for (int i = 0; i < span.Length; i++)
+            Console.Write(span[i] + " ");
+
+       
+
+    }
 }

@@ -21,4 +21,11 @@ class SlidingWindowMax
                 Console.Write(arr[dq.First.Value] + " ");
         }
     }
+    static void Main()
+    {
+        int[] arr = { 1, 3, -1, -3, 5, 3, 6, 7 };
+        int k = 3;
+        MaxInWindow(arr, k);
+        
+    }
 }
