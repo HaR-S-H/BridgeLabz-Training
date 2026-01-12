@@ -1,121 +1,123 @@
 using System;
-using System.Collections.Generic;
 
-class RodCutting
+// Represents a metal rod with prices for each cut length
+class MetalRod
 {
-    // Function to calculate maximum revenue using Dynamic Programming
-    static int MaxRevenue(int[] price, int n, out List<int> cuts)
+    private int length;
+    private int[] prices; // prices[cutLength] = price
+
+    public MetalRod(int length, int[] prices)
     {
-        int[] dp = new int[n + 1];
-        int[] cutAt = new int[n + 1];
+        this.length = length;
+        this.prices = new int[length + 1]; // 1-based indexing
+        for (int i = 1; i <= length; i++)
+            this.prices[i] = prices[i];
+    }
 
-        dp[0] = 0;
+    public int Length { get { return length; } }
 
-        for (int i = 1; i <= n; i++)
+    public int GetPrice(int cutLength)
+    {
+        if (cutLength <= 0 || cutLength > length)
+            return 0;
+        return prices[cutLength];
+    }
+}
+
+// Handles cutting strategy for metal rods
+class MetalRodCutter
+{
+    private MetalRod rod;
+    private int[] maxRevenue; // max revenue for each sub-length
+    private int[] cutAt;      // optimal cut at each length
+
+    public MetalRodCutter(MetalRod rod)
+    {
+        this.rod = rod;
+        maxRevenue = new int[rod.Length + 1];
+        cutAt = new int[rod.Length + 1];
+    }
+
+    public void CalculateMaxRevenue()
+    {
+        maxRevenue[0] = 0;
+
+        for (int i = 1; i <= rod.Length; i++)
         {
             int maxVal = int.MinValue;
-
+            int bestCut = 0;
             for (int j = 1; j <= i; j++)
             {
-                if (price[j] + dp[i - j] > maxVal)
+                int revenue = rod.GetPrice(j) + maxRevenue[i - j];
+                if (revenue > maxVal)
                 {
-                    maxVal = price[j] + dp[i - j];
-                    cutAt[i] = j;
+                    maxVal = revenue;
+                    bestCut = j;
                 }
             }
-            dp[i] = maxVal;
+            maxRevenue[i] = maxVal;
+            cutAt[i] = bestCut;
         }
+    }
 
-        // Reconstruct cuts
-        cuts = new List<int>();
-        int length = n;
-        while (length > 0)
+    public int GetMaxRevenue()
+    {
+        return maxRevenue[rod.Length];
+    }
+
+    public void PrintOptimalCuts()
+    {
+        Console.Write("Optimal cuts: ");
+        int n = rod.Length;
+        while (n > 0)
         {
-            cuts.Add(cutAt[length]);
-            length -= cutAt[length];
+            Console.Write(cutAt[n] + " ");
+            n -= cutAt[n];
         }
-
-        return dp[n];
-    }
-
-    // Scenario C: Non-optimized revenue
-    static int NoOptimization(int[] price, int n)
-    {
-        // Case: Sell whole rod directly
-        return price[n];
-    }
-
-    static int RandomCuts(int[] price)
-    {
-        // Example: Always cut in half (4 + 4)
-        return price[4] + price[4];
-    }
-
-    static int SmallCuts(int[] price)
-    {
-        // Example: Cut into all 1-length pieces
-        return price[1] * 8;
-    }
-
-    static void PrintCuts(List<int> cuts)
-    {
-        Console.Write("Best Cut Strategy: ");
-        foreach (int c in cuts)
-            Console.Write(c + " ");
         Console.WriteLine();
     }
 
-    static void Main()
+    public void AddCustomOrder(int customLength, int customPrice)
+    {
+        if (customLength > rod.Length)
+        {
+            Console.WriteLine("Custom order exceeds rod length, ignored.");
+            return;
+        }
+
+        int[] newPrices = new int[rod.Length + 1];
+        for (int i = 1; i <= rod.Length; i++)
+            newPrices[i] = rod.GetPrice(i);
+
+        newPrices[customLength] = customPrice;
+
+        rod = new MetalRod(rod.Length, newPrices);
+        maxRevenue = new int[rod.Length + 1];
+        cutAt = new int[rod.Length + 1];
+    }
+}
+
+// Test for Story 1
+class Program1
+{
+    static void Main(string[] args)
     {
         int rodLength = 8;
+        int[] prices = new int[rodLength + 1] { 0, 1, 5, 8, 9, 10, 17, 17, 20 };
 
-        // =============================
-        // Scenario A: Original Price Chart
-        // =============================
-        Console.WriteLine("SCENARIO A: Optimized Revenue\n");
+        MetalRod rod = new MetalRod(rodLength, prices);
+        MetalRodCutter cutter = new MetalRodCutter(rod);
 
-        int[] priceA = { 0, 1, 5, 8, 9, 10, 17, 17, 20 };
+        cutter.CalculateMaxRevenue();
+        Console.WriteLine("--- Metal Rod Cutting ---");
+        Console.WriteLine("Maximum revenue: " + cutter.GetMaxRevenue());
+        cutter.PrintOptimalCuts();
 
-        List<int> cutsA;
-        int maxRevenueA = MaxRevenue(priceA, rodLength, out cutsA);
-
-        Console.WriteLine("Maximum Revenue: ₹" + maxRevenueA);
-        PrintCuts(cutsA);
-
-        // =============================
-        // Scenario B: Custom Length Order
-        // =============================
-        Console.WriteLine("\nSCENARIO B: With Custom Length Order\n");
-
-        int[] priceB = { 0, 1, 5, 12, 9, 10, 17, 17, 20 }; // Length 3 = ₹12 (premium)
-
-        List<int> cutsB;
-        int maxRevenueB = MaxRevenue(priceB, rodLength, out cutsB);
-
-        Console.WriteLine("Maximum Revenue with Custom Order: ₹" + maxRevenueB);
-        PrintCuts(cutsB);
-
-        // =============================
-        // Scenario C: Non-Optimized Strategies
-        // =============================
-        Console.WriteLine("\nSCENARIO C: Without Optimization\n");
-
-        int noCut = NoOptimization(priceA, rodLength);
-        int random = RandomCuts(priceA);
-        int small = SmallCuts(priceA);
-
-        Console.WriteLine("Sell Whole Rod: ₹" + noCut);
-        Console.WriteLine("Random Cuts (4+4): ₹" + random);
-        Console.WriteLine("All Small Cuts (1x8): ₹" + small);
-
-        // =============================
-        // Comparison Summary
-        // =============================
-        Console.WriteLine("\nREVENUE COMPARISON\n");
-        Console.WriteLine("Optimized (Scenario A): ₹" + maxRevenueA);
-        Console.WriteLine("With Custom Order (Scenario B): ₹" + maxRevenueB);
-        Console.WriteLine("No Optimization: ₹" + noCut);
-        Console.WriteLine("Random Strategy: ₹" + random);
-        Console.WriteLine("Worst Strategy: ₹" + small);
+        // Add custom order
+        cutter.AddCustomOrder(3, 12);
+        cutter.CalculateMaxRevenue();
+        Console.WriteLine("After adding custom order:");
+        Console.WriteLine("Maximum revenue: " + cutter.GetMaxRevenue());
+        cutter.PrintOptimalCuts();
     }
 }
