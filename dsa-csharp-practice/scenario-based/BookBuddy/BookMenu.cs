@@ -2,12 +2,9 @@ using System;
 class Menu
 {
     private IBookManager manager;
-    public Menu(IBookManager manager)
+       public void ShowMenu()
     {
-        this.manager = manager;
-    }
-    public void ShowMenu()
-    {
+        manager = new BookUtility();
         int choice;
         do
         {
