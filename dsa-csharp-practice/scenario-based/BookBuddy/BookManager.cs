@@ -1,9 +1,9 @@
 using System;
-using System.Collections;
+using System.Collections.Generic;
 
 public class BookUtility: IBookManager
 {
-    private ArrayList books = new ArrayList();
+    private List<Book> books = new List<Book>();
     public void AddBook(string title, string author)
     {
         Book book = new Book();
@@ -23,11 +23,11 @@ public class BookUtility: IBookManager
         {
             for (int j = i + 1; j < books.Count; j++)
             {
-                Book book1 = (Book)books[i];
-                Book book2 = (Book)books[j];
+                Book book1 = books[i];
+                Book book2 = books[j];
                 if (string.Compare(book1.Title, book2.Title) > 0)
                 {
-                    object temp = books[i];
+                    Book temp = books[i];
                     books[i] = books[j];
                     books[j] = temp;
                 }
