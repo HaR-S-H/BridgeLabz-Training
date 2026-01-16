@@ -1,5 +1,4 @@
-using System;
-class CircularLinkedList
+class CircularLinkedList : IRoundabout
 {
     private Vehicle head;
 
@@ -57,7 +56,7 @@ class CircularLinkedList
                     prev.Next = current.Next;
                 }
 
-                Console.WriteLine("Vehicle "+number+" removed.");
+                Console.WriteLine($"Vehicle {number} removed.");
                 return;
             }
 

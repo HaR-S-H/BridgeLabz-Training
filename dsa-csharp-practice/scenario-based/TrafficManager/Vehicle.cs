@@ -1,4 +1,3 @@
-using System;
 class Vehicle
 {
     public string Number { get; private set; }
