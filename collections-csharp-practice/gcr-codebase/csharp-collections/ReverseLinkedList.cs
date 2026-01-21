@@ -3,12 +3,18 @@ using System.Collections.Generic;
 
 class ReverseLinkedList
 {
-    static LinkedList<int> Reverse(LinkedList<int> list)
+    static void Main()
     {
-        LinkedList<int> result = new LinkedList<int>();
-        foreach (var item in list)
-            result.AddFirst(item);
+        LinkedList<int> list = new LinkedList<int>(
+            new int[] { 1, 2, 3, 4, 5 });
 
-        return result;
+        LinkedList<int> reversed = new LinkedList<int>();
+
+        foreach (var item in list)
+            reversed.AddFirst(item);
+
+        Console.WriteLine("Reversed LinkedList:");
+        foreach (var item in reversed)
+            Console.Write(item + " ");
     }
 }
